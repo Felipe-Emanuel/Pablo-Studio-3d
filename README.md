@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto Atualizado
 
-## Getting Started
+Este é o README para o projeto atualizado, que inclui várias melhorias e atualizações em relação à versão anterior. Abaixo, você encontrará detalhes sobre as novas funcionalidades, tecnologias utilizadas e links úteis.
 
-First, run the development server:
+## Novidades
+- Utilização do Next.js 13: O projeto foi migrado para o Next.js 13, aproveitando os recursos mais recentes e melhorias de desempenho oferecidos pela nova versão.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+- Testes Unitários com Jest: Foram implementados testes unitários utilizando o framework Jest. Esses testes ajudam a garantir a integridade e qualidade do código, identificando possíveis erros ou regressões.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Documentação com Storybook: A documentação do projeto foi incrementada utilizando o Storybook, o que facilita explorar e visualizar os componentes do projeto de forma interativa, facilitando o desenvolvimento e a manutenção.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Atualização total do layout: O layout do projeto foi completamente atualizado. Foram realizadas melhorias de design e usabilidade, proporcionando uma experiência aprimorada para os usuários.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Adição do <a href="https://prismic.io/" target="_blank">Prismic</a> para gerenciar adição de produtos, possibilitando gerenciamento de produtos de forma extremamente performática.
 
-## Learn More
+### Visualização do Novo Layout
+Você pode visualizar o novo layout do projeto no <a target="_blank" href="https://www.figma.com/file/E3lbI71LWXETW29ofMXhuB/Pablo-Studio-3d?type=design&node-id=0%3A1&t=KnS4YrrmYwzMknRz-1">Figma</a>.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Stacks Utilizadas
+- Next.js 13
+- Jest
+- Storybook
+- Tailwind CSS
+- React.js
+- TypeScript
+- Prismic
+- FireStore
+- Next-Auth
