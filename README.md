@@ -11,6 +11,8 @@ Este é o README para o projeto atualizado, que inclui várias melhorias e atual
 
 - Atualização total do layout: O layout do projeto foi completamente atualizado. Foram realizadas melhorias de design e usabilidade, proporcionando uma experiência aprimorada para os usuários.
 
+- Adição do <a href="https://prismic.io/" target="_blank">Prismic</a> para gerenciar adição de produtos, possibilitando gerenciamento de produtos de forma extremamente performática.
+
 ### Visualização do Novo Layout
 Você pode visualizar o novo layout do projeto no <a target="_blank" href="https://www.figma.com/file/E3lbI71LWXETW29ofMXhuB/Pablo-Studio-3d?type=design&node-id=0%3A1&t=KnS4YrrmYwzMknRz-1">Figma</a>.
 
@@ -21,3 +23,6 @@ Você pode visualizar o novo layout do projeto no <a target="_blank" href="https
 - Tailwind CSS
 - React.js
 - TypeScript
+- Prismic
+- FireStore
+- Next-Auth
