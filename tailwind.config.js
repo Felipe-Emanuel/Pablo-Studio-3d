@@ -5,6 +5,14 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    {
+      pattern: /^text-/,
+    },
+    {
+      pattern: /^font-/,
+    },
+  ],
   theme: {
 
   backgroundImage: {
@@ -26,6 +34,15 @@ module.exports = {
       '200': '#D9D9D9',
       '400': '#BFBFBF'
     },
+  },
+  fontSize: {
+    '2xl': '64px',
+    xl: '32px',
+    lg: '24px',
+    md: '16px',
+    sm: '14px',
+    xs: '12px',
+    xxs: '10px',
   },
   extend: {
       boxShadow: {

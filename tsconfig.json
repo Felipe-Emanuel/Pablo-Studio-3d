@@ -26,6 +26,7 @@
       "@util/*": ["./src/components/util/*"],
       "@hooks/*": ["./src/data/hooks/*"],
       "@Prismic/*": ["./src/data/prismic/*"],
+      "@components/*": ["./src/components/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

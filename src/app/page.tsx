@@ -1,6 +1,7 @@
 import { getProduct } from "@Prismic/index"
 import { PrismicRichText  } from "@prismicio/react"
 import { Suspense } from "react"
+import { Text } from "@components/Text/index"
 
 export default async function Home() {
   const { product } = await getProduct()
@@ -8,6 +9,7 @@ export default async function Home() {
   return (
     <div className='h-screen w-screen bg-gray-400 flex flex-col justify-center items-center font-Roboto font-bold text-white'>
       <h1 className='text-white'>Hello World!</h1>
+      <Text size="2xl" text="Teste componente" />
         {product.map(product => (
           <Suspense fallback={<p className="text-red-500">Carregando Produto...</p>}>
             <PrismicRichText field={product.Name} />
