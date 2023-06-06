@@ -1,0 +1,5 @@
+{
+  "repositoryName": "pablo-studio-3d",
+  "adapter": "@slicemachine/adapter-next",
+  "libraries": ["./slices"]
+}

@@ -1,0 +1,194 @@
+{
+  "id": "product",
+  "label": "product",
+  "format": "custom",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": { "config": { "label": "UID" }, "type": "UID" },
+      "product_name": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Product name",
+          "placeholder": "ex: Estátua Filósofo Grego",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "images": {
+        "type": "Group",
+        "config": {
+          "label": "images",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": { "label": "image", "constraint": {}, "thumbnails": [] }
+            },
+            "alt": {
+              "type": "StructuredText",
+              "config": {
+                "label": "alt",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
+        }
+      },
+      "colection": {
+        "type": "StructuredText",
+        "config": {
+          "label": "colection",
+          "placeholder": "ex: \"Metal\", \"Medieval\", \"Estátua\", \"Jogos\", etc...",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "description",
+          "placeholder": "dica: dê os detalhes ao chat gpt e peça ele uma descrição de um produto com os determinados detalhes",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "initial_price": {
+        "type": "StructuredText",
+        "config": {
+          "label": "initial price",
+          "placeholder": "Aqui deve ser posto o preço em string, por exemplo: 149,99",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "quote": {
+        "type": "StructuredText",
+        "config": {
+          "label": "quote",
+          "placeholder": "Aqui deve ir uma citação do personagem. Pegue do google uma frase curta, é interessante!",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "dimensions": {
+        "type": "Group",
+        "config": {
+          "label": "dimensions",
+          "fields": {
+            "sceporigem": {
+              "type": "StructuredText",
+              "config": {
+                "label": "sCepOrigem",
+                "placeholder": "Coloque o SEU cep aqui!",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "scepdestino": {
+              "type": "StructuredText",
+              "config": {
+                "label": "sCepDestino",
+                "placeholder": "deixe-o assim: \"\"",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "nvlpeso": {
+              "type": "StructuredText",
+              "config": {
+                "label": "nVlPeso",
+                "placeholder": "Peso da encomenda, incluindo sua embalagem. Informe em quilogramas. Envelope: máximo de 1kg",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "ncdformato": {
+              "type": "StructuredText",
+              "config": {
+                "label": "nCdFormato",
+                "placeholder": "Formato ex: 1 = caixa/pacote; 2 = Formato rolo/prisma; 3 = Envelope (marque com o número do formato)",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "nvlcomprimento": {
+              "type": "StructuredText",
+              "config": {
+                "label": "nVlComprimento",
+                "placeholder": "Comprimento da encomenda (incluindo embalagem), em centímetros",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "nvlaltura": {
+              "type": "StructuredText",
+              "config": {
+                "label": "nVlAltura",
+                "placeholder": "Altura da encomenda incluindo embalagem, em centímetros. 0 para envelope",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "nvllargura": {
+              "type": "StructuredText",
+              "config": {
+                "label": "nVlLargura",
+                "placeholder": "Largura da encomenda (incluindo embalagem), em centímetros",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "ncdservico": {
+              "type": "StructuredText",
+              "config": {
+                "label": "nCdServico",
+                "placeholder": "sempre adicione ambos: '04014', '04510'",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            },
+            "nvldiametro": {
+              "type": "StructuredText",
+              "config": {
+                "label": "nVlDiametro",
+                "placeholder": "Diâmetro da encomenda (incluindo embalagem), em centímetros",
+                "allowTargetBlank": true,
+                "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+              }
+            }
+          }
+        }
+      },
+      "brand": {
+        "type": "StructuredText",
+        "config": {
+          "label": "brand",
+          "placeholder": "apenas UMA dentre: marvel, dc , disney, anime, starWars, games, statueDrawing, drawing, actionFigure",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "type": {
+        "type": "StructuredText",
+        "config": {
+          "label": "type",
+          "placeholder": "informe 1 entre as opções: 3D ou AF",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      },
+      "weight": {
+        "type": "StructuredText",
+        "config": {
+          "label": "weight",
+          "placeholder": "informe o peso. Ex: 10",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        }
+      }
+    }
+  }
+}
