@@ -23,7 +23,7 @@
     "paths": {
       "@/*": ["./*"],
       "@styles/*": ["./src/styles/*"],
-      "@util/*": ["./src/components/util/*"],
+      "@utils/*": ["./src/components/utils/*"],
       "@hooks/*": ["./src/data/hooks/*"],
       "@Prismic/*": ["./src/data/prismic/*"],
       "@components/*": ["./src/components/*"],
