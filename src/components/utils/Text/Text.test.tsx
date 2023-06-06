@@ -26,11 +26,11 @@ describe("<Text />", () => {
     expect(container.firstChild).toHaveClass('text-sm');
   });
 
-  it("should apply correct weigth class", () => {
-    const { container } = render(<Text text="hello world!" weigth="bold" />)
+  it('applies the correct weight class', () => {
+    const { container } = render(<Text text="Hello world!" size="md" weigth="bold" />);
 
     expect(container.firstChild).toHaveClass('font-bold');
-  })
+  });
 
   it("should use 'p' like component tag", () => {
     const { container } = render(<Text text="hello world!" />)
