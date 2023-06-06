@@ -1,7 +1,7 @@
+import { Suspense } from "react"
 import { PrismicNextImage } from "@prismicio/next";
-import { redirect } from "next/navigation";
-import { createClient } from "@/prismicio";
-import Image from "next/image";
+import { getProductByUid } from "@Prismic/index"
+
 
 interface ProductProps {
   params: {
@@ -10,21 +10,18 @@ interface ProductProps {
 }
 
 export default async function Product({ params }: ProductProps) {
-  const client = createClient();
-
-  const product = await client.getByUID("product", params.uid);
-  const images = product.data.images.map((image) => image.image);
-  console.log();
+  const { images, product } = await getProductByUid(params)
 
   return (
     <>
-      <h1>{product.uid}</h1>
+      <h1>Produtos</h1>
+      <Suspense fallback={<p>Carregando produtos...</p>}>
+        <h2>{product.uid}</h2>
 
-      {images.map((image) => (
-        <PrismicNextImage
-        field={image}
-      />
-      ))}
+        {images.map((image) => (
+          <PrismicNextImage field={image} alt="" />
+        ))}
+      </Suspense>
     </>
   );
 }
