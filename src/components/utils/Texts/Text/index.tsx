@@ -6,6 +6,7 @@ export interface TextProps {
   weigth?: "normal" | "bold" | "light";
   text: ReactNode;
   className?: string;
+  dark?: boolean;
 }
 
 export function Text({
@@ -14,12 +15,14 @@ export function Text({
   size = "sm",
   weigth,
   className = "",
+  dark = false,
 }: TextProps) {
   const Comp = as ?? "p";
+  const mode = dark ? 'text-dark' : 'text-white';
 
   return (
     <Comp
-      className={`font-Roboto text-${size} text-white font-${weigth} ${className}`}
+      className={`font-Roboto text-${size} ${mode} font-${weigth} ${className}`}
     >
       {text}
     </Comp>

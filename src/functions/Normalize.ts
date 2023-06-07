@@ -16,9 +16,14 @@ export function Normalize() {
       .join(" ");
   };
 
+  const hiddenText = (str: string) => {
+    return str.split("").map(() => "*").join("")
+  }
+
 
   return {
     formatPrice,
-    capitalizeName
+    capitalizeName,
+    hiddenText
   }
 }
