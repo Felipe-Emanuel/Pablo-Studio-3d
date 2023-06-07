@@ -1,16 +1,27 @@
-export interface TextProps{
+import { ReactNode } from "react";
+
+export interface TextProps {
   as?: "span";
-  size?: "2xl" | "xl" | "lg" | "md" | "sm" | "xs" | "xxs"
-  weigth?: "normal" | "bold" | "light"
-  text: string;
+  size?: "2xl" | "xl" | "lg" | "md" | "sm" | "xs" | "xxs";
+  weigth?: "normal" | "bold" | "light";
+  text: ReactNode;
+  className?: string;
 }
 
-export function Text({as, text, size = "sm", weigth}: TextProps) {
-  const Comp = as ?? "p"
+export function Text({
+  as,
+  text,
+  size = "sm",
+  weigth,
+  className = "",
+}: TextProps) {
+  const Comp = as ?? "p";
 
   return (
-    <Comp className={`font-Roboto text-${size} text-white font-${weigth}`}>
+    <Comp
+      className={`font-Roboto text-${size} text-white font-${weigth} ${className}`}
+    >
       {text}
     </Comp>
-  )
+  );
 }
