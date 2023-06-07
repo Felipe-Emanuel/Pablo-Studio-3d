@@ -16,6 +16,8 @@ type Story = StoryObj<typeof Button>;
 
 export const button: Story = {
   args: {
-    label: 'Acessar'
+    label: 'Acessar',
+    labelSize: "sm",
+    variant: 'light',
   }
 }

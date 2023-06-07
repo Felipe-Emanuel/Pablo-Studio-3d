@@ -16,6 +16,8 @@ type Story = StoryObj<typeof Text>;
 
 export const text: Story = {
   args: {
-    text: '',
+    text: 'Text component',
+    size: 'xl',
+    weigth: 'normal'
   },
 }

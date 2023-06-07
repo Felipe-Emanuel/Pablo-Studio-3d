@@ -15,6 +15,7 @@ type Story = StoryObj<typeof Title>;
 
 export const title: Story = {
   args: {
-    title: ''
+    title: 'Title component',
+    size: 'lg'
   }
 }

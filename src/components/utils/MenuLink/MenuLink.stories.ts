@@ -17,6 +17,7 @@ type Story = StoryObj<typeof MenuLink>;
 export const menuLink: Story = {
   args: {
     href: '/',
-    label: 'Catálogo'
+    label: 'Catálogo',
+    icon: false,
   }
 }
