@@ -14,7 +14,14 @@ module.exports = {
     },
   ],
   theme: {
-
+  keyframes: {
+    jump: {
+      "50%": { transform: "scale(0.95)"}
+    },
+  },
+  animation: {
+    jump: "jump 75ms 1 linear",
+  },
   backgroundImage: {
     "gradient-radial":
       "radial-gradient(44.02% 44.02% at 49.97% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);",
