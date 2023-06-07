@@ -28,6 +28,7 @@
       "@Prismic/*": ["./src/data/prismic/*"],
       "@components/*": ["./src/components/*"],
       "@icons/*": ["./src/icons/*"],
+      "@animations/*": ["./src/components/animations/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

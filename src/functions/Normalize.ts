@@ -20,10 +20,21 @@ export function Normalize() {
     return str.split("").map(() => "*").join("")
   }
 
+  function formatCep(value: string): string {
+    const formattedValue = value.replace(/\D/g, "");
+    const cepRegex = /^(\d{5})(\d{3})$/;
+
+    if (cepRegex.test(formattedValue)) {
+      return formattedValue.replace(cepRegex, "$1-$2");
+    }
+
+    return formattedValue;
+  }
 
   return {
     formatPrice,
     capitalizeName,
-    hiddenText
+    hiddenText,
+    formatCep
   }
 }
