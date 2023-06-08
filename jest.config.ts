@@ -1,6 +1,6 @@
 import type { JestConfigWithTsJest  } from "ts-jest"
 
-const jestCOnfig: JestConfigWithTsJest = {
+const jestConfig: JestConfigWithTsJest = {
   testEnvironment: 'jsdom',
   testPathIgnorePatterns: ['/node_modules/', '/.next/'],
   collectCoverage: true,
@@ -18,4 +18,4 @@ const jestCOnfig: JestConfigWithTsJest = {
   },
 }
 
-export default jestCOnfig
+export default jestConfig

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { MenuLink } from ".";
 
 const meta: Meta <typeof MenuLink> = {
-  title: "Utils/Menu/Menulink",
+  title: "Utils/MenuLink",
   component: MenuLink,
   argTypes: {
     href: { type: "string" },

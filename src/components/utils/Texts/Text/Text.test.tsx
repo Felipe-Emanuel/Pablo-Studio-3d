@@ -37,4 +37,10 @@ describe("<Text />", () => {
 
     expect(container.querySelector('p')).toBeInTheDocument();
   })
+
+  it("should apply 'text-dark' if dark mode is choised", () => {
+    const { container } = render(<Text text="hello world!" dark />)
+
+    expect(container.firstChild).toHaveClass("text-dark");
+  })
 });

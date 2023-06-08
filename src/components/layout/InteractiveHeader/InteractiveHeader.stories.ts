@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react"
 import Logo from "./logo.png";
 
 import { InteractiveHeader } from "."
-import { image } from "./imageMock";
+import { image } from "../../../mocks/imageMock";
 
 const meta: Meta<typeof InteractiveHeader> = {
   title: "Layout/InteractiveHeader",

@@ -1,6 +1,6 @@
 import { render, fireEvent, waitFor } from "@testing-library/react";
 import { Galery } from ".";
-import { images } from "./imagesMock";
+import { images } from "@/src/mocks/imagesMock";
 
 describe("<Galery />", () => {
   it("should render without errors", () => {

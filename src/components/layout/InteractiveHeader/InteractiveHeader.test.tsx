@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { InteractiveHeader } from ".";
-import { image } from "./imageMock";
+import { image } from "@/src/mocks/imageMock";
 
 const config = {
   buttonLabel: "Acessar",
