@@ -14,7 +14,7 @@ const jestCOnfig: JestConfigWithTsJest = {
     '^@Prismic/(.+)': '<rootDir>/src/data/prismic/$1',
     '^@components/(.+)': '<rootDir>/src/components/$1',
     '^@icons/(.+)': '<rootDir>/src/icons/$1',
-    '^@animations/(.+)': '<rootDir>/src/components/animations/$1'
+    '^@animations/(.+)': '<rootDir>/src/components/animations/$1',
   },
 }
 

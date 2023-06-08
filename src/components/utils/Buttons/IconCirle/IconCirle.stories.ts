@@ -17,7 +17,8 @@ type Story = StoryObj<typeof IconCirle>;
 
 export const iconCirle: Story = {
   args: {
-    icon: ShareIcon(),
+    //@ts-expect-error
+    icon: ShareIcon(false),
     size: "medium"
   }
 }

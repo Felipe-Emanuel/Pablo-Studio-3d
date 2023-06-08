@@ -5,12 +5,14 @@ interface ButtonProps {
   label?: ReactNode;
   onClick?: () => void;
   variant?: "dark" | "light";
+  className?: string;
 }
 
 export function Button({
   label = "Acessar",
   variant = "light",
-  labelSize = "lg",
+  labelSize,
+  className = "",
   ...props
 }: ButtonProps) {
   const mode =
@@ -22,7 +24,8 @@ export function Button({
     <button
       className={`py-3 px-10 text-center transition-all duration-300 font-bold
       hover:bg-white text-white hover:text-dark
-      text-${labelSize}
+      text-${labelSize ?? "text-sm lg:text-xl"}
+      ${className}
       ${mode}`}
       {...props}
     >

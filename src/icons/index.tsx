@@ -2,7 +2,7 @@ import { AiFillCaretDown, AiOutlineLeft, AiOutlineRight, AiOutlineHeart, AiFillH
 import { BsShareFill, BsLink45Deg } from "react-icons/bs"
 
 interface IconsProps {
-  isOpen: boolean
+  isOpen?: boolean
 }
 
 export const ArrowDownIcon = () => <AiFillCaretDown className="w-8 h-8 text-white" />
