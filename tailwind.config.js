@@ -18,9 +18,15 @@ module.exports = {
     jump: {
       "50%": { transform: "scale(0.95)"}
     },
+    heartWiggle: {
+      '0%, 100%': { transform: 'rotate(0deg)' },
+      '25%': { transform: 'rotate(8deg)' },
+      '75%': { transform: 'rotate(-8deg)' },
+    }
   },
   animation: {
     jump: "jump 75ms 1 linear",
+    heartWiggle: 'heartWiggle 150ms 2 linear',
   },
   backgroundImage: {
     "gradient-radial":
