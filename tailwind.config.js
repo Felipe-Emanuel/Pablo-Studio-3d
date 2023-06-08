@@ -22,11 +22,15 @@ module.exports = {
       '0%, 100%': { transform: 'rotate(0deg)' },
       '25%': { transform: 'rotate(8deg)' },
       '75%': { transform: 'rotate(-8deg)' },
-    }
+    },
+    appear: {
+      '100%': { transform: 'translateX(-2vw) translateY(2vh)' },
+    },
   },
   animation: {
     jump: "jump 75ms 1 linear",
     heartWiggle: 'heartWiggle 150ms 2 linear',
+    appear: 'appear 2500ms 1 ease-in-out forwards',
   },
   backgroundImage: {
     "gradient-radial":
@@ -64,6 +68,7 @@ module.exports = {
       },
       dropShadow: {
         'card': '20px 20px 20px rgba(0, 0, 0, 0.75)',
+        'thumbnail': '3px 3px 3px rgba(0, 0, 0, 0.75)'
       },
       screens: {
         'base': '500px'
