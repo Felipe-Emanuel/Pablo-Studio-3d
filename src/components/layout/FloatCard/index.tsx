@@ -20,7 +20,7 @@ export function FloatCard({
   return (
     <ParallaxTilt tiltMaxAngleX={5} tiltMaxAngleY={5} className={size}>
       <Link href={href}>
-        <PrismicNextImage field={field} fill className="rounded-3xl drop-shadow-card relative" alt="" />
+        <PrismicNextImage field={field} className="rounded-3xl drop-shadow-card relative w-full h-full" alt="" />
         <div className="absolute inset-0 bg-black/25 rounded-3xl" />
       </Link>
     </ParallaxTilt>

@@ -18,6 +18,10 @@ module.exports = {
     jump: {
       "50%": { transform: "scale(0.95)"}
     },
+    shimmer: {
+      '0%' : {transform: 'translateX(-100%) translateY(-100%)'},
+      '100%' : {transform: 'translateX(100%) translateY(100%)'},
+    },
     heartWiggle: {
       '0%, 100%': { transform: 'rotate(0deg)' },
       '25%': { transform: 'rotate(8deg)' },
@@ -35,12 +39,6 @@ module.exports = {
     heartWiggle: 'heartWiggle 150ms 2 linear',
     appear: 'appear 2500ms 1 ease-in-out forwards',
     float: 'float 2500ms 1 ease-in-out forwards',
-  },
-  backgroundImage: {
-    "gradient-radial":
-      "radial-gradient(44.02% 44.02% at 49.97% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);",
-    "placeholder-gradient":
-      "linear-gradient(255.92deg, #121214 0.9%, #BFBFBF 55.94%);",
   },
   fontFamily: {
     "Roboto": "'Roboto Condensed', sans-serif",
@@ -77,6 +75,13 @@ module.exports = {
       screens: {
         'base': '500px'
       }
+    },
+    backgroundImage: {
+      "gradient-radial":
+        "radial-gradient(44.02% 44.02% at 49.97% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);",
+      "placeholder-gradient":
+        "linear-gradient(255.92deg, #121214 0.9%, #BFBFBF 55.94%);",
+      "gradient-to-skeleton": "linear-gradient(315deg, rgba(0,0,0,0) 33%, rgba(255,255,255,1) 50%, rgba(0,0,0,0) 64%);"
     },
   },
   plugins: [],
