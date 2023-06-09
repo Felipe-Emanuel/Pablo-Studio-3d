@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ParallaxTilt from "react-parallax-tilt"
 import { useState } from "react";
-import { ImageType } from "@models/ImageType";
+import { ImageType } from "@/src/models/Prismic/ImageType";
 import { PrismicNextImage } from "@prismicio/next";
 
 interface GaleryProps {

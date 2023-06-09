@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Title } from "@utils/Texts/Title";
 import { Button } from "../../utils/Buttons/Button";
 import { PrismicNextImage } from "@prismicio/next";
-import { ImageType } from "@/src/models/ImageType";
+import { ImageType } from "@/src/models/Prismic/ImageType";
 
 interface InteractiveHeaderProps {
   title: string;

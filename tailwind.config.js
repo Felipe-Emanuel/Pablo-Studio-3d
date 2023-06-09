@@ -26,17 +26,21 @@ module.exports = {
     appear: {
       '100%': { transform: 'translateX(-2vw) translateY(2vh)' },
     },
+    float: {
+      '100%': { transform: 'translateX(-10px) translateY(10px)' },
+    },
   },
   animation: {
     jump: "jump 75ms 1 linear",
     heartWiggle: 'heartWiggle 150ms 2 linear',
     appear: 'appear 2500ms 1 ease-in-out forwards',
+    float: 'float 2500ms 1 ease-in-out forwards',
   },
   backgroundImage: {
     "gradient-radial":
       "radial-gradient(44.02% 44.02% at 49.97% 50%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 100%);",
     "placeholder-gradient":
-      "linear-gradient(255.92deg, #121214 0.9%, #DADADA 75.94%);",
+      "linear-gradient(255.92deg, #121214 0.9%, #BFBFBF 55.94%);",
   },
   fontFamily: {
     "Roboto": "'Roboto Condensed', sans-serif",

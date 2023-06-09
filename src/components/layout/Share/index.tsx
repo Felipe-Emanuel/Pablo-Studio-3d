@@ -1,3 +1,5 @@
+'use client';
+
 import { useState, ReactNode } from "react";
 import { ShareIcon } from "@/src/icons";
 import { Button } from "@utils/Buttons/Button";

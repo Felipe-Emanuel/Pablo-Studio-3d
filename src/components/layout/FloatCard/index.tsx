@@ -1,10 +1,10 @@
 import ParallaxTilt from "react-parallax-tilt"
 import { PrismicNextImage } from "@prismicio/next";
-import { ImageType } from "@/src/models/ImageType";
+import { ImageFieldImage } from "@prismicio/client";
 import Link from "next/link";
 
 interface FloatCardProps{
-  field: ImageType;
+  field: ImageFieldImage | null | undefined;
   href: string;
   small?: boolean
 }
@@ -20,7 +20,7 @@ export function FloatCard({
   return (
     <ParallaxTilt tiltMaxAngleX={5} tiltMaxAngleY={5} className={size}>
       <Link href={href}>
-        <PrismicNextImage field={field} fill className="rounded-3xl drop-shadow-card relative" />
+        <PrismicNextImage field={field} fill className="rounded-3xl drop-shadow-card relative" alt="" />
         <div className="absolute inset-0 bg-black/25 rounded-3xl" />
       </Link>
     </ParallaxTilt>

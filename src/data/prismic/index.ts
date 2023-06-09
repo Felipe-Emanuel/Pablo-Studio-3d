@@ -29,6 +29,7 @@ export const getProduct = async () => {
     const product = products.map((product) => {
       const { data } = product
       return {
+        uid: product.uid,
         Name: data.product_name,
         brand: data.brand,
         collection: data.colection,
@@ -37,7 +38,8 @@ export const getProduct = async () => {
         initialPrice: data.initial_price,
         quote: data.quote,
         type: data.type,
-        weight: data.weight
+        weight: data.weight,
+        description: data.description
       }
     })
 
