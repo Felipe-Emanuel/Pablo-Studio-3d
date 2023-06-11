@@ -1,16 +1,16 @@
 import { Suspense } from "react"
 import { NewsInfo } from "../components/layout/NewsInfo"
-import { NewsInfoSkeleton } from "@layout/NewsInfo/NewsInfoSkeleton"
+import { NewsInfoSkeleton } from "../components/layout/NewsInfo/NewsInfoSkeleton/NewsInfoSkeleton"
+import { getProduct } from "../data/prismic";
 
 export default async function Home() {
-
+  const { product } = await getProduct();
 
   return (
     <div className='h-screen w-full p-2 sm:p-10 bg-gray-400 font-Roboto font-bold text-white overflow-x-hidden'>
       <h1 className='text-white'>Hello World!</h1>
       <Suspense fallback={<NewsInfoSkeleton />}>
-        {/* @ts-expect-error */}
-        <NewsInfo  />
+        <NewsInfo product={product} />
       </Suspense>
     </div>
   )

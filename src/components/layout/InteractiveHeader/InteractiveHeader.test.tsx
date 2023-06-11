@@ -5,7 +5,7 @@ import { image } from "@/src/mocks/imageMock";
 const config = {
   buttonLabel: "Acessar",
   title: "Transforme sua imaginação em arte realista!",
-  href: "/catalog/drawings",
+  href: "/catalog/type",
 };
 
 describe("<InteractiveHeader />", () => {

@@ -23,7 +23,7 @@ exports[`<NewsInfoSkeleton /> should apply a snapshot to ensure responsive props
       class="md:w-[50%] flex flex-col gap-3 p-3"
     >
       <div
-        class="h-10 w-1/2 m-auto bg-dark/25 relative overflow-hidden rounded-md base:rounded-3xl"
+        class="h-8 w-1/2 m-auto bg-dark/25 relative overflow-hidden rounded-md base:rounded-3xl"
       >
         <div
           class="absolute inset-0 bg-gradient-to-skeleton animate-[shimmer_500ms_infinite]"
@@ -44,7 +44,7 @@ exports[`<NewsInfoSkeleton /> should apply a snapshot to ensure responsive props
         />
       </div>
       <div
-        class="h-32 w-full bg-dark/25 relative overflow-hidden rounded-md base:rounded-3xl"
+        class="h-28 w-full bg-dark/25 relative overflow-hidden rounded-md base:rounded-3xl"
       >
         <div
           class="absolute inset-0 bg-gradient-to-skeleton animate-[shimmer_500ms_infinite]"

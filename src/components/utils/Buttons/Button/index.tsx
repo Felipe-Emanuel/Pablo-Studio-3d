@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 
 interface ButtonProps {
-  labelSize?: "xl" | "lg" | "sm";
+  labelSize?: "xl" | "lg" | "sm" | "xs";
   label?: ReactNode;
   onClick?: () => void;
   variant?: "dark" | "light";

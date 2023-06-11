@@ -17,7 +17,7 @@ export const repositoryName = config.repositoryName;
 const routes: prismic.ClientConfig["routes"] = [
   {
     type: "product",
-    path: "/[uid]",
+    path: "/product/[uid]",
   },
 ];
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from "react";
 import { FillHeart, OutlineHeart } from "@/src/icons";
 import { IconCirle } from "@utils/Buttons/IconCirle";

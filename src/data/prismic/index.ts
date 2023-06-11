@@ -8,7 +8,6 @@ interface ProductProps {
 const client = createClient();
 
 export const getProductByUid = async ({ uid }: ProductProps) => {
-
   const product = await client
     .getByUID("product", uid)
     .catch(() => redirect("/"));
@@ -22,27 +21,24 @@ export const getProductByUid = async ({ uid }: ProductProps) => {
 };
 
 export const getProduct = async () => {
+  const products = await client.getAllByType("product");
 
-  const products = await client
-    .getAllByType("product")
+  const product = products.map((product) => {
+    const { data } = product;
+    return {
+      uid: product.uid,
+      Name: data.product_name,
+      brand: data.brand,
+      collection: data.colection,
+      dimensions: data.dimensions,
+      images: data.images,
+      initialPrice: data.initial_price,
+      quote: data.quote,
+      type: data.type,
+      weight: data.weight,
+      description: data.description,
+    };
+  });
 
-    const product = products.map((product) => {
-      const { data } = product
-      return {
-        uid: product.uid,
-        Name: data.product_name,
-        brand: data.brand,
-        collection: data.colection,
-        dimensions: data.dimensions,
-        images: data.images,
-        initialPrice: data.initial_price,
-        quote: data.quote,
-        type: data.type,
-        weight: data.weight,
-        description: data.description
-      }
-    })
-
-
-    return {product}
-}
+  return { product };
+};

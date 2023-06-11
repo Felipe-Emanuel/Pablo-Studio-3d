@@ -22,7 +22,7 @@ export const interactiveHeader: Story = {
   args: {
     buttonLabel: "Acessar",
     title: "Transforme sua imaginação em arte realista!",
-    href: "/catalog/drawings",
+    href: "/catalog/type",
     image,
     logo: Logo.src
   }
