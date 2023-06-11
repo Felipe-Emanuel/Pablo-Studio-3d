@@ -11,7 +11,7 @@ import { IconCirle } from "@utils/Buttons/IconCirle";
 import { ArrowUpIcon } from "@/src/icons";
 import { PrismicNextImage } from "@prismicio/next";
 import { useRef, useState, useEffect } from "react";
-import { productMocked } from "@/src/mocks/productMocked";
+import { setPreferences } from "@/src/functions/setPreferences";
 
 interface ProductCardProps {
   product: Product[];
@@ -77,19 +77,29 @@ export function ProductCard({ product = [] }: ProductCardProps) {
               className="sm:hidden absolute bottom-4 flex items-center justify-center gap-2 w-full"
             >
               <Favorite />
-              <Link href={`/product/${uid}`}>
-                <IconCirle icon={<ArrowUpIcon />} />
-              </Link>
-              <Text
-                size="md"
-                weigth="bold"
-                text={asText(Name)}
-                className="truncate"
-              />
+              <div className="z-30 flex items-center gap-2">
+                <Link
+                  role="link"
+                  href={`/product/${uid}`}
+                  onClick={() => setPreferences(field)}
+                >
+                  <IconCirle icon={<ArrowUpIcon />} />
+                </Link>
+                <Text
+                  size="md"
+                  weigth="bold"
+                  text={asText(Name)}
+                  className="truncate"
+                />
+              </div>
             </div>
-            <div className={`absolute h-full z-0 right-0 duration-500  ${
-                current === cardRef ? "hidden sm:block opacity-100" : "opacity-0"
-              }`}>
+            <div
+              className={`absolute h-full z-0 right-0 duration-500  ${
+                current === cardRef
+                  ? "hidden sm:block opacity-100"
+                  : "opacity-0"
+              }`}
+            >
               <div
                 className="relative base:right-0 p-4 base:w-52 w-full h-full z-20
               flex flex-col items-center base:items-start justify-between m-auto base:m-0"
@@ -98,7 +108,10 @@ export function ProductCard({ product = [] }: ProductCardProps) {
                   subtitle={`Coleção ${asText(collection)}`}
                   title={asText(Name)}
                 />
-                <div data-testid="favorite" onClick={(e) => e.stopPropagation()}>
+                <div
+                  data-testid="favorite"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <Favorite />
                 </div>
 
@@ -107,7 +120,12 @@ export function ProductCard({ product = [] }: ProductCardProps) {
                   size="xs"
                   className="hidden base:flex"
                 />
-                <Link href={`/product/${uid}`} className="hidden base:flex">
+                <Link
+                  role="link"
+                  href={`/product/${uid}`}
+                  onClick={() => setPreferences(field)}
+                  className="hidden base:flex"
+                >
                   <Button label="Acessar" labelSize="xs" />
                 </Link>
               </div>

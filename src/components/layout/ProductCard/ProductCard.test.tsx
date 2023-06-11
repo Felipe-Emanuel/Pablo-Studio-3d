@@ -80,4 +80,24 @@ describe("<ProductCard />", () => {
     expect(ref.current).toBeUndefined();
   });
 
+  it("should call 'setPreference' function", () => {
+    const { getAllByRole } = render(
+      // @ts-expect-error: CHAMADA COM MOCK PERSONALIZADO QUE FOGE UM POUCO DA TIPAGEM COMPLEXA ESTIPULADA
+      <ProductCard product={productMocked} />
+    );
+
+    const mockFn = {
+      setPreference: jest.fn()
+    }
+
+    const linkElementWithFunction = getAllByRole("link");
+
+    linkElementWithFunction.forEach(link => {
+      fireEvent.click(link, mockFn.setPreference)
+    })
+
+    waitFor(() => {
+      expect(mockFn.setPreference).toHaveBeenCalledTimes(2)
+    })
+  })
 });
