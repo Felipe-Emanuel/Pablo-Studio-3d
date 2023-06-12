@@ -1,5 +1,6 @@
-import { PrismicNextImage } from "@prismicio/next";
+import { Suspense } from "react"
 import { getProductByUid } from "@Prismic/index"
+import { SelecionedProduct } from "@/src/components/layout/SelecionedProduct";
 
 
 interface ProductProps {
@@ -9,15 +10,14 @@ interface ProductProps {
 }
 
 export default async function Product({ params }: ProductProps) {
-  const { images, product } = await getProductByUid(params)
+  const { selecionedProduct, images } = await getProductByUid(params)
 
   return (
     <>
       <h1>Produtos</h1>
-        <h2>{product.uid}</h2>
-        {images.map((image) => (
-          <PrismicNextImage field={image} alt="" />
-        ))}
+      <Suspense fallback={<p>Carregando produtos...</p>}>
+        <SelecionedProduct product={selecionedProduct} images={images} uid={params.uid} />
+      </Suspense>
     </>
   );
 }

@@ -13,6 +13,8 @@ export type ImageType = {
 };
 
 export type Product = {
+  initialPrice: string;
+  count: number;
   Name: TitleField;
   collection: RichTextField;
   description: RichTextField;

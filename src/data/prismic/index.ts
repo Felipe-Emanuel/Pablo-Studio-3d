@@ -8,15 +8,16 @@ interface ProductProps {
 const client = createClient();
 
 export const getProductByUid = async ({ uid }: ProductProps) => {
-  const product = await client
+  const getting = await client
     .getByUID("product", uid)
     .catch(() => redirect("/"));
 
-  const images = product.data.images.map((image) => image.image);
+  const selecionedProduct = getting.data;
+  const images = getting.data.images.map((image) => image.image);
 
   return {
     images,
-    product,
+    selecionedProduct,
   };
 };
 

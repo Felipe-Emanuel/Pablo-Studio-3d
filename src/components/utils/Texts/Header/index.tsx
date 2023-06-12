@@ -14,8 +14,8 @@ export function Header({
   subtitleSize = "lg",
 }: headerProps) {
   return (
-    <div className="flex flex-col gap-0 w-full max-w-sm leading-5">
-      <Title title={title} size={titleSize} className="leading-7 my-1" />
+    <div className="flex flex-col gap-0 w-full max-w-sm ">
+      <Title title={title} size={titleSize} className="leading-none my-1 w-full max-w-[420px]" />
       <Title as="h2" title={subtitle} size={subtitleSize} className="text-white/75" />
     </div>
   );
