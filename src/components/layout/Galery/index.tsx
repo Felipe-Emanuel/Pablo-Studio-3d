@@ -27,11 +27,13 @@ export function Galery({ images = [] }: GaleryProps) {
         className="m-auto w-full max-w-xs md:max-w-md h-[350px] md:h-full cursor-none"
       >
         <Image
+          role="img"
           src={url!}
-          alt={alt!}
+          alt={`Texto alternativo ${alt}`!}
           quality={100}
-          fill
-          className="rounded-3xl drop-shadow-card md:animate-appear relative"
+          width={1000}
+          height={1000}
+          className="rounded-3xl drop-shadow-card md:animate-appear relative w-full h-full"
           blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO0d7avBwACzAFCwWiztQAAAABJRU5ErkJggg=="
           placeholder="blur"
         />

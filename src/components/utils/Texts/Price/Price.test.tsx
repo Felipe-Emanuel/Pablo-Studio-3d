@@ -22,6 +22,7 @@ describe("<Price>", () => {
       <div>
         <div
           class="w-fit h-fit border-0 text-dark/75 font-bold text-lg"
+          data-testid="price"
         >
           R$ 10,00
         </div>
@@ -36,6 +37,7 @@ describe("<Price>", () => {
       <div>
         <div
           class="w-fit h-fit border-b-2 border-dark px-7 font-bold text-lg"
+          data-testid="price"
         >
           R$ 39,99
         </div>

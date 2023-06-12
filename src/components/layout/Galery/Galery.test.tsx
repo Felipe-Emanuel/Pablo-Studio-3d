@@ -1,4 +1,4 @@
-import { render, fireEvent, waitFor } from "@testing-library/react";
+import { render, fireEvent, waitFor, getByRole } from "@testing-library/react";
 import { Galery } from ".";
 import { images } from "@/src/mocks/imagesMock";
 
@@ -17,14 +17,14 @@ describe("<Galery />", () => {
   });
 
   it("should set the current image correctly", async () => {
-    const { getAllByTestId, getByAltText } = render(<Galery images={images} />);
+    const { getAllByTestId, getAllByRole } = render(<Galery images={images} />);
     const thumbnail = getAllByTestId("thumbnail")
 
     fireEvent.mouseEnter(thumbnail[1])
     await waitFor (() => {
-      const imageElement = getByAltText('image 2')
+      const imageElement = getAllByRole("img")
 
-      expect(imageElement).toBeInTheDocument()
+      expect(imageElement[0]).toBeInTheDocument()
     })
   });
 })

@@ -24,7 +24,7 @@ export function SelecionedProduct({
 }: SelecionedProductProps) {
   if (!product) return null;
 
-  const { addItem } = useCart(product, uid);
+  const { addItem } = useCart();
   const { capitalizeName } = Normalize();
 
   const { product_name, colection, description, initial_price, quote } =
@@ -58,7 +58,7 @@ export function SelecionedProduct({
         />
         <Button
           label="Adicionar ao carrinho"
-          onClick={addItem}
+          onClick={() => addItem(product, uid)}
         />
       </div>
     </div>

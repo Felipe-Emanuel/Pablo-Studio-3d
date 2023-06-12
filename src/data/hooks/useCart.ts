@@ -2,13 +2,12 @@
 import { asText } from "@prismicio/client";
 import { useLocalStorage } from "@hooks/useLocalStorage";
 import { ProductDocumentData, Simplify } from "@/prismicio-types";
-import { Product } from "@/src/models/Prismic/ImageType";
+import { CartCollection } from "@/src/models/CartCollection";
 
-export const useCart = (
-  product: Simplify<ProductDocumentData>,
-  uid: string
-) => {
+export const useCart = () => {
   const { setLocalStorage, getLocalStorage, STORAGE_KEY } = useLocalStorage();
+  const addItem = (  product: Simplify<ProductDocumentData>,
+    uid: string) => {
   const { dimensions } = product;
   const normalizeDimensions = dimensions && dimensions[0];
 
@@ -33,11 +32,11 @@ export const useCart = (
     dimensions: productDimensions,
   };
 
-  const addItem = () => {
+
     const data = getLocalStorage("cart");
 
     if (data) {
-      const exist = data.find((item: Product) => item.uid === uid);
+      const exist = data.find((item: CartCollection) => item.uid === uid);
 
       if (exist) {
         const initialPrice = parseFloat(exist.initialPrice);
@@ -48,7 +47,7 @@ export const useCart = (
           actualPrice: initialPrice * (exist.count + 1),
         };
 
-        const updatedData = data.map((item: Product) => {
+        const updatedData = data.map((item: CartCollection) => {
           if (item.uid === uid) {
             return updatedCartItem;
           }
@@ -65,21 +64,21 @@ export const useCart = (
     return setLocalStorage("cart", [cartItem]);
   };
 
-  const removeItem = () => {
+  const removeItem = (uid: string) => {
     const data = getLocalStorage("cart");
 
     if (data) {
-      const updatedData = data.filter((item: Product) => item.uid !== uid);
+      const updatedData = data.filter((item: CartCollection) => item.uid !== uid);
       setLocalStorage("cart", updatedData);
     }
   };
 
-  const removeFromCount = () => {
+  const removeFromCount = (uid: string) => {
     const data = getLocalStorage("cart");
 
     if (data) {
       let itemRemoved = false;
-      const updatedData = data.map((item: Product) => {
+      const updatedData = data.map((item: CartCollection) => {
         const initialPrice = parseFloat(item.initialPrice);
 
         if (item.uid === uid && item.count > 0) {
@@ -93,9 +92,9 @@ export const useCart = (
         }
       });
 
-      const finalData = updatedData.filter((item: Product) => {
+      const finalData = updatedData.filter((item: CartCollection) => {
         if (item.count <= 0 && !itemRemoved) {
-          removeItem();
+          removeItem(uid);
           itemRemoved = true;
           return false;
         }
@@ -106,11 +105,11 @@ export const useCart = (
     }
   };
 
-  const addToCount = () => {
+  const addToCount = (uid: string) => {
     const data = getLocalStorage("cart");
 
     if (data) {
-      const updatedData = data.map((item: Product) => {
+      const updatedData = data.map((item: CartCollection) => {
         const initialPrice = parseFloat(item.initialPrice);
 
         if (item.uid === uid) {
@@ -118,11 +117,15 @@ export const useCart = (
             ...item,
             actualPrice: initialPrice * (item.count + 1),
             count: item.count + 1,
-          };
+          }
+        } else {
+          return item;
         }
       });
       setLocalStorage("cart", updatedData);
     }
+
+    return
   };
 
   const clearCart = () => window.localStorage.removeItem(`${STORAGE_KEY}cart`);

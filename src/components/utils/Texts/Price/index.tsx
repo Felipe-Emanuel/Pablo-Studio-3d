@@ -1,7 +1,7 @@
 import { Normalize } from "@/src/functions/Normalize";
 
 interface PriceProps {
-  price: string;
+  price: string | number;
   weigth?: "bold" | "light";
   size?: "xl" | "lg";
   border?: boolean;
@@ -20,7 +20,7 @@ export function Price({
   const borded = border ? "border-b-2 border-dark px-7" : `border-0 ${mode}`;
 
   return (
-    <div className={`w-fit h-fit ${borded} font-${weigth} text-${size}`}>
+    <div data-testid="price" className={`w-fit h-fit ${borded} font-${weigth} text-${size}`}>
       {formatPrice(price)}
     </div>
   );

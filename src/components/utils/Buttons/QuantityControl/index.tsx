@@ -12,11 +12,12 @@ export function QuantityControl({
   increment,
   decrement,
 }: QuantityControlProps) {
-  const danger = qtd <= 0 ? "hover:text-black/25" : "text-black";
+  const danger = qtd <= 1 ? "hover:text-black/25" : "text-black";
 
   return (
     <div className="w-20 rounded-3xl px-2 py-1 border-2 border-black bg-transparent flex items-center justify-between">
       <button
+        data-testid="decrement"
         onClick={decrement}
         className={`duration-500 hover:-translate-x-0.5 ${danger}`}
       >
@@ -24,6 +25,7 @@ export function QuantityControl({
       </button>
       <Text as="span" dark weigth="bold" size="sm" text={qtd} />
       <button
+        data-testid="increment"
         onClick={increment}
         className="duration-500 hover:translate-x-0.5"
       >

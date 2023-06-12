@@ -30,10 +30,10 @@ describe("<QuantityControl />", () => {
     expect(getByText("0")).toBeInTheDocument();
   })
 
-  it("should apply 'danger' style if 'qtd' <= 0", () => {
+  it("should apply 'danger' style if 'qtd' <= 1", () => {
     const { container } = render(
       <QuantityControl
-        qtd={1}
+        qtd={2}
         decrement={decrementtMock}
         increment={incrementMock}
       />
