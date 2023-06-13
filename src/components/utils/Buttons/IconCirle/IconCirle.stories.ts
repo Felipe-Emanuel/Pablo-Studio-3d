@@ -4,7 +4,7 @@ import { IconCirle } from ".";
 import { ShareIcon } from "@icons/index";
 
 const meta: Meta<typeof IconCirle> = {
-  title: "Utils/Button/IconCirle",
+  title: "Utils/Buttons/IconCirle",
   component: IconCirle,
   argTypes: {
     icon: { type: "symbol" },

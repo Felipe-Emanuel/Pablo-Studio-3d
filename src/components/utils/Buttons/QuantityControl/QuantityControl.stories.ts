@@ -4,7 +4,7 @@ import { action } from "@storybook/addon-actions";
 import { QuantityControl } from ".";
 
 const meta: Meta<typeof QuantityControl> = {
-  title: "Utils/Button/QuantityControl",
+  title: "Utils/Buttons/QuantityControl",
   component: QuantityControl,
   argTypes: {
     qtd: { type: "number"},
