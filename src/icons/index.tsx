@@ -6,7 +6,7 @@ interface IconsProps {
 }
 
 export const ArrowUpIcon = () => <AiFillCaretUp className="w-8 h-8 text-white" />
-export const ArrowDownIcon = () => <AiFillCaretDown className="w-8 h-8 text-white" />
+export const ArrowDownIcon = () => <AiFillCaretDown className="sm:w-8 sm:h-8 text-white" />
 export const LeftArrowIcon = () => <AiOutlineLeft className="w-4 h-4 " />
 export const RightArrowIcon = () => <AiOutlineRight className="w-4 h-4 text-black" />
 export const ShareIcon = ({isOpen}: IconsProps) => <BsShareFill className={`w-8 h-8 transition-all ${isOpen ? 'text-dark' : 'text-white'}`} />

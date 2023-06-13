@@ -9,12 +9,14 @@ interface MenuLinkProps {
   href: string;
   label: string;
   icon?: boolean;
+  onClick?: () => void;
 }
 
 export function MenuLink({
   href = "/",
   label = "",
   icon = false,
+  ...props
 }: MenuLinkProps) {
   const [isHovered, setIsHovered] = useState(false);
   const pathName = usePathname();
@@ -26,10 +28,11 @@ export function MenuLink({
 
   return (
     <Link
+      {...props}
       onMouseEnter={setHover}
       onMouseLeave={setHover}
       href={href}
-      className={`absolute font-Roboto text-white bg-dark rounded-md text-lg
+      className={`relative w-fit font-Roboto text-white bg-dark rounded-md text-xs sm:text-lg
       py-2 px-6 flex gap-1 items-center after:rounded-md hover:animate-jump after:text-dark
       after:duration-300 after:top-0 after:absolute after:w-0 after:h-full hover:after:w-full after:bg-white/25
       ${isHovered ? "after:left-0" : "after:right-0"}
