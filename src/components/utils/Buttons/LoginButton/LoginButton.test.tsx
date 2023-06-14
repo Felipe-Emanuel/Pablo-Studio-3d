@@ -1,18 +1,19 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, waitFor } from "@testing-library/react";
 import { LoginButton } from ".";
-
-const mockFn = {
-  onClick: jest.fn(),
-};
+import { signIn } from 'next-auth/react';
 
 jest.mock("lottie-react", () => ({
   useLottie: jest.fn().mockReturnValue({}),
 }));
 
+jest.mock("next-auth/react", () => ({
+  signIn: jest.fn(),
+}));
+
 describe("<LoginButton />", () => {
   it("should render without error", () => {
     const { container } = render(
-      <LoginButton method="instagram" onClick={mockFn.onClick} />
+      <LoginButton method="Facebook" id="facebook" />
     );
 
     expect(container).toBeInTheDocument();
@@ -27,7 +28,7 @@ describe("<LoginButton />", () => {
 
   it("should render with 'reverse' values", () => {
     const { container } = render(
-      <LoginButton method="Google" reverse onClick={mockFn.onClick} />
+      <LoginButton method="Google" reverse id="google" />
     );
 
     expect(container.firstChild).toHaveClass("flex-row-reverse");
@@ -35,10 +36,23 @@ describe("<LoginButton />", () => {
 
   it("should render loading state", () => {
     const { container } = render(
-      <LoginButton method="Google" isLoading onClick={mockFn.onClick} />
+      <LoginButton method="Google" isLoading id="google" />
     );
 
     const label = container.querySelector("button");
     expect(label?.disabled).toEqual(true);
+  });
+
+  it("should call signIn with the correct ID when clicked", async () => {
+    const { findByText } = render(
+      <LoginButton method="Google" id="google" />
+    );
+
+    const loginButton = await findByText("Continuar com o Google");
+    fireEvent.click(loginButton);
+
+    await waitFor(() => {
+      expect(signIn).toHaveBeenCalledWith("google");
+    });
   });
 });

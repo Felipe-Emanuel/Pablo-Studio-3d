@@ -27,6 +27,7 @@ export function Button({
       text-${labelSize ?? "text-sm lg:text-xl"}
       ${className}
       ${mode}`}
+
       {...props}
     >
       {label}

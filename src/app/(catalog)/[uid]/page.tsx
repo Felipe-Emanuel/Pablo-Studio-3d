@@ -1,15 +1,18 @@
-import { Suspense } from "react"
+import { Suspense } from "react";
 import { getProduct } from "@/src/data/prismic";
 import { Text } from "@utils/Texts/Text";
 import { SliderElement } from "@/src/components/layout/SliderElement";
 import { ProductCard } from "@/src/components/layout/ProductCard";
+import { Menu } from "@/src/components/layout/Menu";
 
 interface catalogDrawingsProps {
   params: {
     uid: string;
-  }
+  };
 }
-export default async function catalogDrawings({params}: catalogDrawingsProps) {
+export default async function catalogDrawings({
+  params,
+}: catalogDrawingsProps) {
   const { product } = await getProduct();
 
   return (
@@ -19,5 +22,5 @@ export default async function catalogDrawings({params}: catalogDrawingsProps) {
         <SliderElement children={<ProductCard product={product} />} />
       </Suspense>
     </>
-  )
+  );
 }

@@ -1,7 +1,9 @@
+
 import { Suspense } from "react"
 import { NewsInfo } from "../components/layout/NewsInfo"
 import { NewsInfoSkeleton } from "../components/layout/NewsInfo/NewsInfoSkeleton/NewsInfoSkeleton"
 import { getProduct } from "../data/prismic";
+import { Menu } from "../components/layout/Menu";
 
 export default async function Home() {
   const { product } = await getProduct();

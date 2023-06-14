@@ -1,37 +1,42 @@
+'use client';
 import { Text } from "../../Texts/Text";
+import { signIn } from 'next-auth/react';
 import { LoginLoading } from "@/src/components/animations/LoginAnimation";
-import { GoogleIcon, InstaIcon } from "@/src/icons";
+import { FacebookIcon, GoogleIcon, InstaIcon } from "@/src/icons";
+
 
 interface LoginButtonProps {
-  method: "instagram" | "Google";
+  method: "Facebook" | "Google" | "Instagram";
   reverse?: boolean;
   isLoading?: boolean;
-  onClick: () => void;
+  id: string;
 }
 
 const icons = {
-  instagram: <InstaIcon />,
+  Facebook: <FacebookIcon />,
   Google: <GoogleIcon />,
+  Instagram: <InstaIcon />
 };
 
 const labels = {
-  instagram: "instagram",
+  Facebook: "Facebook",
   Google: "Google",
+  Instagram: "Instagram",
 };
 
 export function LoginButton({
   method = "Google",
   reverse = false,
   isLoading = false,
-  onClick,
+  id = ""
 }: LoginButtonProps) {
-  const label = <Text dark as="span" text={`Entrar com o ${labels[method]}`} />;
+  const label = <Text dark as="span" text={`Continuar com o ${labels[method]}`} />;
   const mode = reverse ? "flex-row-reverse" : "";
 
   return (
     <button
       disabled={isLoading}
-      onClick={onClick}
+      onClick={() => signIn(id)}
       className={`flex items-center gap-2 ring-1 ring-black
       rounded-lg w-60 h-16 justify-center relative
       after:text-dark

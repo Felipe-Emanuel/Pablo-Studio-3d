@@ -1,16 +1,18 @@
 import { useLottie } from "lottie-react";
 import GoogleLoading from "./GoogleLoading.json";
+import FacebookLoading from "./FacebookLoading.json";
 import InstagtamLoading from "./InstagtamLoading.json";
 
 interface LoginLoadingProps {
-  loadOption: "instagram" | "Google"
+  loadOption: "Facebook" | "Google" | "Instagram";
 }
 
 export function LoginLoading({loadOption}: LoginLoadingProps) {
 
   const loading = {
     Google: GoogleLoading,
-    instagram: InstagtamLoading
+    Facebook: FacebookLoading,
+    Instagram: InstagtamLoading
   }
 
   const options = {

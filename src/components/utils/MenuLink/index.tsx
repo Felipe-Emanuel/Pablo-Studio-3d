@@ -24,7 +24,7 @@ export function MenuLink({
   const setHover = () => setIsHovered((isHovered) => !isHovered);
 
   const activeLink =
-    pathName === href ? "border-2 border-white" : "border-2 border-dark";
+    pathName === href ? "lg:border-2 lg:border-white" : "lg:border-2 lg:border-dark";
 
   return (
     <Link
@@ -32,8 +32,8 @@ export function MenuLink({
       onMouseEnter={setHover}
       onMouseLeave={setHover}
       href={href}
-      className={`relative w-fit font-Roboto text-white bg-dark rounded-md text-xs sm:text-lg
-      py-2 px-6 flex gap-1 items-center after:rounded-md hover:animate-jump after:text-dark
+      className={`relative pointer-events-auto w-full z-50 lg:w-fit font-Roboto text-white lg:bg-dark rounded-md text-xs sm:text-lg
+      py-2 px-6 flex gap-1 items-center lg:after:rounded-md after:text-dark
       after:duration-300 after:top-0 after:absolute after:w-0 after:h-full hover:after:w-full after:bg-white/25
       ${isHovered ? "after:left-0" : "after:right-0"}
       ${activeLink}`}

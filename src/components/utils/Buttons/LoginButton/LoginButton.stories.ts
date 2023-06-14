@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 import { LoginButton } from ".";
 
 const meta: Meta<typeof LoginButton> = {

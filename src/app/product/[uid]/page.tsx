@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import { getProductByUid } from "@Prismic/index"
 import { SelecionedProduct } from "@/src/components/layout/SelecionedProduct";
+import { Menu } from "@/src/components/layout/Menu";
 
 
 interface ProductProps {

@@ -43,14 +43,14 @@ describe('<MenuLink />', () => {
     const { getByRole } = render(<MenuLink label={label} href={href} />)
 
     const linkElement = getByRole('link');
-    expect(linkElement).toHaveClass("border-2", "border-white")
+    expect(linkElement).toHaveClass("lg:border-2", "lg:border-white")
   })
 
   it("should apply 'border-2' and 'border-dark' when pathName equal 'href'", () => {
     const { getByRole } = render(<MenuLink label={label} href="/different" />)
 
     const linkElement = getByRole('link');
-    expect(linkElement).toHaveClass("border-2", "border-dark")
+    expect(linkElement).toHaveClass("lg:border-2", "lg:border-dark")
   })
 
   it("should render without href prop", () => {
